@@ -1,0 +1,141 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep:*)",
+      "Bash(ls:*)",
+      "Bash(source:*)",
+      "Bash(find:*)",
+      "Bash(mv:*)",
+      "Bash(mkdir:*)",
+      "Bash(tree:*)",
+      "Bash(ruff:*)",
+      "Bash(touch:*)",
+      "Bash(cat:*)",
+      "Bash(ruff check:*)",
+      "Bash(pytest:*)",
+      "Bash(python:*)",
+      "Bash(python -m pytest:*)",
+      "Bash(python3 -m pytest:*)",
+      "Bash(node:*)",
+      "Bash(git:*)",
+      "Bash(echo:*)",
+      "Bash(date:*)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "mcp__mcp-feedback-enhanced__interactive_feedback",
+      "mcp__sequential-thinking__sequentialthinking"
+    ],
+    "deny": []
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|MultiEdit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node agents/todo-hook-manager.js handle-file-change",
+            "timeout": 30000
+          }
+        ]
+      },
+      {
+        "matcher": "Task",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node agents/todo-hook-manager.js update-stats",
+            "timeout": 15000
+          }
+        ]
+      },
+      {
+        "matcher": "TodoWrite",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node agents/todo-hook-manager.js update-stats",
+            "timeout": 10000
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node agents/todo-hook-manager.js handle-task-complete",
+            "timeout": 45000
+          },
+          {
+            "type": "command",
+            "command": "git add . && git commit -m \"Auto-commit: Agent task completed - $(date)\" || true",
+            "timeout": 20000
+          }
+        ]
+      },
+      {
+        "matcher": "spec-*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node agents/agent-selector.js trigger-next-phase",
+            "timeout": 30000
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node agents/todo-hook-manager.js handle-notification",
+            "timeout": 10000
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node agents/todo-hook-manager.js update-stats",
+            "timeout": 15000
+          },
+          {
+            "type": "command",
+            "command": "echo \"$(date): Claude Code session completed\" >> .claude/session.log",
+            "timeout": 5000
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Task",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node agents/todo-hook-manager.js validate-task-prerequisites",
+            "timeout": 10000
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|MultiEdit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -c \"import json, sys; data=json.load(sys.stdin); path=data.get('tool_input',{}).get('file_path',''); sys.exit(2 if any(p in path for p in ['.env', 'package-lock.json', '.git/', 'node_modules/']) else 0)\"",
+            "timeout": 5000
+          }
+        ]
+      }
+    ]
+  }
+}
