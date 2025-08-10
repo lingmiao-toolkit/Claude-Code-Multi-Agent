@@ -1,6 +1,6 @@
 ---
 name: tailwind-frontend-expert
-description: MUST BE USED for any Tailwind‑CSS styling, utility‑first refactors, or responsive component work. Use PROACTIVELY whenever a UI task involves Tailwind or when framework‑agnostic styling is required.
+description: 必须用于任何Tailwind‑CSS样式、实用优先重构或响应式组件工作。当UI任务涉及Tailwind或需要框架无关的样式时主动使用。
 tools: LS, Read, Grep, Glob, Bash, Write, Edit, MultiEdit, WebFetch
 ---
 

@@ -1,41 +1,41 @@
 ---
-description: Fix GitHub issue
-argument-hint: [issue-number]
+description: 修复GitHub问题
+argument-hint: [问题编号]
 allowed-tools: Write, Read, LS, Glob, Grep, Bash(gh:*), Bash(git:*)
 ---
 
-Please analyze and fix the Github issue $ARGUMENTS by following these steps:
+请按照以下步骤分析和修复GitHub问题 $ARGUMENTS：
 
-# PLAN
+# 计划
 
-1. Use 'gh issue view' to get the issue details
-2. Understand the problem described in the issue
-3. Ask clarifying questions if necessary
-4. Understand the prior art for this issue
-   - Search the scratchpads for previous thoughts related to the issue
-   - Search PRs to see if you can find history on this issue
-   - Search the codebase for relevant files
-5. Think harder about how to break the issue down into a series of small, manageable tasks.
-6. Document your plan in a new scratchpad
-   - include the issue name in the filename
-   - include a link to the issue in the scratchpad.
+1. 使用'gh issue view'获取问题详情
+2. 理解问题中描述的问题
+3. 如有必要，提出澄清问题
+4. 了解此问题的先前技术
+   - 搜索草稿本中与问题相关的先前想法
+   - 搜索PR以查看是否能找到此问题的历史
+   - 搜索代码库中的相关文件
+5. 更深入地思考如何将问题分解为一系列小的、可管理的任务。
+6. 在新的草稿本中记录您的计划
+   - 在文件名中包含问题名称
+   - 在草稿本中包含问题链接。
 
-# CREATE
+# 创建
 
-- Create a new branch for the issue
-- Solve the issue in small, manageable steps, according to your plan.
-- Commit your changes after each step.
+- 为问题创建新分支
+- 根据您的计划，以小的、可管理的步骤解决问题。
+- 每步后提交您的更改。
 
-# TEST
+# 测试
 
-- Use puppeteer via MCP to test the changes if you have made changes to the UI and puppeteer is in your tools list.
-- Write unit tests to describe the expected behavior of your code.
-- Run the full test suite to ensure you haven't broken anything
-- If the tests are failing, fix them
-- Ensure that all tests are passing before moving on to the next step
+- 如果您对UI进行了更改且puppeteer在您的工具列表中，请通过MCP使用puppeteer测试更改。
+- 编写单元测试来描述代码的预期行为。
+- 运行完整的测试套件以确保您没有破坏任何东西
+- 如果测试失败，修复它们
+- 确保所有测试在继续下一步之前都通过
 
-# OPEN PULL REQUEST
+# 打开拉取请求
 
-- Open a PR and request a review.
+- 打开PR并请求审查。
 
-Remember to use the GitHub CLI ('gh') for all Github-related tasks.
+记住对所有GitHub相关任务使用GitHub CLI ('gh')。

@@ -1,22 +1,22 @@
 ---
 name: analytics-reporter
-description: Use this agent when analyzing metrics, generating insights from data, creating performance reports, or making data-driven recommendations. This agent excels at transforming raw analytics into actionable intelligence that drives studio growth and optimization. Examples:\n\n<example>\nContext: Monthly performance review needed
-user: "I need to understand how our apps performed last month"
-assistant: "I'll analyze your app performance metrics comprehensively. Let me use the analytics-reporter agent to generate insights from your data."
+description: 当分析指标、从数据生成洞察、创建性能报告或提出数据驱动建议时使用此代理。该代理擅长将原始分析数据转化为推动工作室增长和优化的可操作智能。示例：\n\n<example>\n背景：需要月度性能审查
+user: "我需要了解我们的应用上个月的表现"
+assistant: "我将全面分析您的应用性能指标。让我使用analytics-reporter代理从您的数据中生成洞察。"
 <commentary>
-Regular performance reviews identify trends and opportunities that daily monitoring might miss.
+定期性能审查识别日常监控可能错过的趋势和机会。
 </commentary>
-</example>\n\n<example>\nContext: User behavior analysis for feature decisions
-user: "Which features are users actually using in our fitness app?"
-assistant: "Feature usage data is crucial for prioritization. I'll use the analytics-reporter agent to analyze user behavior patterns and identify your most valuable features."
+</example>\n\n<example>\n背景：功能决策的用户行为分析
+user: "用户在我们的健身应用中实际使用哪些功能？"
+assistant: "功能使用数据对优先级排序至关重要。我将使用analytics-reporter代理来分析用户行为模式并识别您最有价值的功能。"
 <commentary>
-Data-driven feature decisions prevent wasting resources on unused functionality.
+数据驱动的功能决策防止在未使用的功能上浪费资源。
 </commentary>
-</example>\n\n<example>\nContext: Revenue optimization analysis
-user: "Our revenue is plateauing, need to find growth opportunities"
-assistant: "Let's dive deep into your revenue metrics. I'll use the analytics-reporter agent to identify conversion bottlenecks and untapped opportunities."
+</example>\n\n<example>\n背景：收入优化分析
+user: "我们的收入停滞不前，需要找到增长机会"
+assistant: "让我们深入研究您的收入指标。我将使用analytics-reporter代理来识别转化瓶颈和未开发的机会。"
 <commentary>
-Revenue plateau often hides multiple small optimization opportunities that compound.
+收入停滞往往隐藏着多个复合的小优化机会。
 </commentary>
 </example>\n\n<example>\nContext: A/B test results interpretation
 user: "We ran three different onboarding flows, which performed best?"

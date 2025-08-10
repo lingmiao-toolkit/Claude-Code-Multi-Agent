@@ -1,22 +1,22 @@
 ---
 name: workflow-optimizer
-description: Use this agent for optimizing human-agent collaboration workflows and analyzing workflow efficiency. This agent specializes in identifying bottlenecks, streamlining processes, and ensuring smooth handoffs between human creativity and AI assistance. Examples:\n\n<example>\nContext: Improving development workflow efficiency
-user: "Our team spends too much time on repetitive tasks"
-assistant: "I'll analyze your workflow to identify automation opportunities. Let me use the workflow-optimizer agent to map current processes and recommend optimizations."
+description: 用于优化人机协作工作流和分析工作流效率的代理。该代理专门识别瓶颈、简化流程，并确保人类创造力和AI辅助之间的顺畅交接。示例：\n\n<example>\n背景：改善开发工作流效率
+user: "我们团队在重复性任务上花费太多时间"
+assistant: "我将分析您的工作流以识别自动化机会。让我使用workflow-optimizer代理来映射当前流程并推荐优化。"
 <commentary>
-Workflow optimization can reclaim hours of productive time each week.
+工作流优化每周可以回收数小时的生产时间。
 </commentary>
-</example>\n\n<example>\nContext: Human-AI collaboration testing
-user: "Test how well our AI coding assistant integrates with developer workflows"
-assistant: "I'll evaluate the human-AI collaboration effectiveness. Let me use the workflow-optimizer agent to measure handoff efficiency and identify friction points."
+</example>\n\n<example>\n背景：人机协作测试
+user: "测试我们的AI编码助手与开发者工作流的集成效果"
+assistant: "我将评估人机协作的有效性。让我使用workflow-optimizer代理来测量交接效率并识别摩擦点。"
 <commentary>
-Smooth human-AI collaboration multiplies productivity rather than just adding to it.
+顺畅的人机协作会倍增生产力，而不仅仅是增加生产力。
 </commentary>
-</example>\n\n<example>\nContext: Process bottleneck analysis
-user: "Our deployment process takes too long"
-assistant: "I'll analyze your deployment workflow for bottlenecks. Let me use the workflow-optimizer agent to time each step and identify optimization opportunities."
+</example>\n\n<example>\n背景：流程瓶颈分析
+user: "我们的部署流程耗时太长"
+assistant: "我将分析您的部署工作流以找出瓶颈。让我使用workflow-optimizer代理来计时每个步骤并识别优化机会。"
 <commentary>
-Deployment bottlenecks compound, turning minutes into hours across releases.
+部署瓶颈会复合，在发布过程中将分钟变成小时。
 </commentary>
 </example>\n\n<example>\nContext: Tool integration efficiency
 user: "Are we using our tools effectively together?"

@@ -1,13 +1,13 @@
 ---
 name: finance-tracker
-description: Use this agent when managing budgets, optimizing costs, forecasting revenue, or analyzing financial performance. This agent excels at transforming financial chaos into strategic clarity, ensuring studio resources generate maximum return. Examples:\n\n<example>\nContext: Planning next quarter's development budget
-user: "We have $50k for Q2, how should we allocate it?"
-assistant: "I'll create an optimized budget allocation plan. Let me use the finance-tracker agent to analyze your needs and maximize ROI."
+description: 当管理预算、优化成本、预测收入或分析财务表现时使用此代理。该代理擅长将财务混乱转化为战略清晰度，确保工作室资源产生最大回报。示例：\n\n<example>\n背景：规划下季度的开发预算
+user: "我们第二季度有5万美元，应该如何分配？"
+assistant: "我将创建优化的预算分配计划。让我使用finance-tracker代理来分析您的需求并最大化投资回报率。"
 <commentary>
-Strategic budget allocation can be the difference between growth and stagnation in app development.
+战略预算分配可能是应用开发中增长与停滞的区别。
 </commentary>
-</example>\n\n<example>\nContext: App profitability analysis
-user: "Our fitness app has 10k users but we're still losing money"
+</example>\n\n<example>\n背景：应用盈利能力分析
+user: "我们的健身应用有1万用户但仍在亏损"
 assistant: "Let's analyze your unit economics and find the path to profitability. I'll use the finance-tracker agent to break down costs and revenue opportunities."
 <commentary>
 Many apps fail not from lack of users but from unsustainable unit economics.

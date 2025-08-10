@@ -1,65 +1,65 @@
 ---
-description: Analyze and improve Claude Code instructions
+description: 分析和改进Claude Code指令
 argument-hint: none
 allowed-tools: Read, Edit, TodoWrite, Bash(git:*)
 ---
 
-You are an expert in prompt engineering, specializing in optimizing AI code assistant instructions. Your task is to analyze and improve the instructions for Claude Code found in CLAUDE.md. Follow these steps carefully:
+您是提示工程专家，专门优化AI代码助手指令。您的任务是分析和改进CLAUDE.md中的Claude Code指令。请仔细遵循以下步骤：
 
-1. Analysis Phase:
-   Review the chat history in your context window.
+1. 分析阶段：
+   审查您上下文窗口中的聊天历史。
 
-Then, examine the current Claude instructions by reading the CLAUDE.md file in the repository root.
+然后，通过阅读存储库根目录中的CLAUDE.md文件检查当前的Claude指令。
 
-Analyze the chat history and instructions to identify areas that could be improved. Look for:
+分析聊天历史和指令以识别可以改进的领域。寻找：
 
-- Inconsistencies in Claude's responses
-- Misunderstandings of user requests
-- Areas where Claude could provide more detailed or accurate information
-- Opportunities to enhance Claude's ability to handle specific types of queries or tasks
+- Claude回应中的不一致性
+- 对用户请求的误解
+- Claude可以提供更详细或准确信息的领域
+- 增强Claude处理特定类型查询或任务能力的机会
 
-2. Analysis Documentation:
-   Document your findings using the TodoWrite tool to track each identified improvement area and create a structured approach.
+2. 分析文档：
+   使用TodoWrite工具记录您的发现，跟踪每个已识别的改进领域并创建结构化方法。
 
-3. Interaction Phase:
-   Present your findings and improvement ideas to the human. For each suggestion:
-   a) Explain the current issue you've identified
-   b) Propose a specific change or addition to the instructions
-   c) Describe how this change would improve Claude's performance
+3. 交互阶段：
+   向人类展示您的发现和改进想法。对于每个建议：
+   a) 解释您识别的当前问题
+   b) 提出对指令的具体更改或添加
+   c) 描述此更改如何改善Claude的性能
 
-Wait for feedback from the human on each suggestion before proceeding. If the human approves a change, move it to the implementation phase. If not, refine your suggestion or move on to the next idea.
+在继续之前等待人类对每个建议的反馈。如果人类批准更改，将其移至实施阶段。如果不批准，完善您的建议或继续下一个想法。
 
-4. Implementation Phase:
-   For each approved change:
-   a) Use the Edit tool to modify the CLAUDE.md file
-   b) Clearly state the section of the instructions you're modifying
-   c) Present the new or modified text for that section
-   d) Explain how this change addresses the issue identified in the analysis phase
+4. 实施阶段：
+   对于每个批准的更改：
+   a) 使用Edit工具修改CLAUDE.md文件
+   b) 清楚说明您正在修改的指令部分
+   c) 呈现该部分的新文本或修改文本
+   d) 解释此更改如何解决分析阶段识别的问题
 
-5. Output Format:
-   Present your final output in the following structure:
+5. 输出格式：
+   按以下结构呈现您的最终输出：
 
 <analysis>
-[List the issues identified and potential improvements]
+[列出识别的问题和潜在改进]
 </analysis>
 
 <improvements>
-[For each approved improvement:
-1. Section being modified
-2. New or modified instruction text
-3. Explanation of how this addresses the identified issue]
+[对于每个批准的改进：
+1. 正在修改的部分
+2. 新的或修改的指令文本
+3. 解释这如何解决识别的问题]
 </improvements>
 
 <final_instructions>
-[Present the complete, updated set of instructions for Claude, incorporating all approved changes]
+[呈现Claude的完整、更新的指令集，包含所有批准的更改]
 </final_instructions>
 
-## Best Practices
+## 最佳实践
 
-- Use TodoWrite to track analysis progress and implementation tasks
-- Read the current CLAUDE.md file thoroughly before making suggestions
-- Test any proposed changes by considering edge cases and common scenarios
-- Ensure all modifications maintain consistency with existing command patterns
-- Commit changes using git after successful implementation
+- 使用TodoWrite跟踪分析进度和实施任务
+- 在提出建议之前彻底阅读当前的CLAUDE.md文件
+- 通过考虑边缘情况和常见场景测试任何提议的更改
+- 确保所有修改与现有命令模式保持一致
+- 成功实施后使用git提交更改
 
-Remember, your goal is to enhance Claude's performance and consistency while maintaining the core functionality and purpose of the AI assistant. Be thorough in your analysis, clear in your explanations, and precise in your implementations.
+记住，您的目标是增强Claude的性能和一致性，同时保持AI助手的核心功能和目的。在分析中要彻底，在解释中要清晰，在实施中要精确。

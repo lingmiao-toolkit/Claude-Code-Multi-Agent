@@ -1,53 +1,53 @@
 # /spec-execute-task
 
-Execute a specific task from the spec-driven development plan, then automatically continue with all remaining tasks.
+从规格驱动开发计划中执行特定任务，然后自动继续执行所有剩余任务。
 
-**Parameters:**
-- `task-id`: Task number to start from (e.g., `1.1`). If not provided, will start from the next uncompleted task.
+**参数：**
+- `task-id`: 开始执行的任务编号（例如`1.1`）。如果未提供，将从下一个未完成的任务开始。
 
-**Auto-Execution Behavior:**
+**自动执行行为：**
 
-1. **Initial Task Execution**: Execute the specified task (or next pending task if no ID provided)
-2. **Auto-Takeover**: Immediately after the first task completes, the system automatically takes over
-3. **Continuous Execution**: Automatically executes ALL remaining uncompleted tasks in sequence
-4. **No User Intervention**: User does not need to approve each task - execution continues until all tasks are done
-5. **Progress Tracking**: Shows real-time progress and marks tasks as completed in tasks.md
-6. **Recovery**: Can resume from interruptions if Claude Code is restarted
+1. **初始任务执行**: 执行指定任务（如果未提供ID，则执行下一个待处理任务）
+2. **自动接管**: 第一个任务完成后，系统立即自动接管
+3. **连续执行**: 自动按顺序执行所有剩余未完成任务
+4. **无用户干预**: 用户无需批准每个任务 - 执行继续直到所有任务完成
+5. **进度跟踪**: 显示实时进度并在tasks.md中标记任务为已完成
+6. **恢复**: 如果Claude Code重启，可以从中断处恢复
 
-**Process:**
+**流程：**
 
-1. **Load Specifications**: Read `requirements.md`, `design.md`, and `tasks.md` from the spec directory
-2. **Execute First Task**: 
-   - If task-id provided, execute that specific task
-   - If no task-id, find and execute the next uncompleted task
-   - Mark task as completed: `- [x] **Task X.X**: ...`
-3. **Auto-Takeover Triggered**: Hook system automatically starts the auto-task-executor
-4. **Continuous Execution**:
-   - Auto-executor takes over and runs all remaining `- [ ]` tasks
-   - Each completed task triggers the next one automatically
-   - Provides progress updates and final summary
-   - Handles errors gracefully and continues with next tasks
+1. **加载规格**: 从规格目录读取`requirements.md`、`design.md`和`tasks.md`
+2. **执行第一个任务**:
+   - 如果提供了task-id，执行该特定任务
+   - 如果没有task-id，查找并执行下一个未完成任务
+   - 标记任务为已完成: `- [x] **任务 X.X**: ...`
+3. **触发自动接管**: Hook系统自动启动auto-task-executor
+4. **连续执行**:
+   - 自动执行器接管并运行所有剩余的`- [ ]`任务
+   - 每个完成的任务自动触发下一个任务
+   - 提供进度更新和最终摘要
+   - 优雅地处理错误并继续下一个任务
 
-**Features:**
-- ✅ **One-Command Start**: Single command starts complete automation
-- ✅ **Zero User Intervention**: No approvals needed after initial command
-- ✅ **Persistent State**: Tasks marked in tasks.md, not separate JSON files
-- ✅ **Interruption Recovery**: Resumes automatically if Claude Code restarts
-- ✅ **Progress Monitoring**: Real-time status and completion tracking
-- ✅ **Error Resilience**: Failed tasks don't stop overall execution
+**功能特性：**
+- ✅ **一键启动**: 单个命令启动完整自动化
+- ✅ **零用户干预**: 初始命令后无需批准
+- ✅ **持久状态**: 任务在tasks.md中标记，而非单独的JSON文件
+- ✅ **中断恢复**: 如果Claude Code重启会自动恢复
+- ✅ **进度监控**: 实时状态和完成跟踪
+- ✅ **错误恢复**: 失败的任务不会停止整体执行
 
-**Emergency Controls:**
-- Use "Emergency Stop Execution" hook to halt auto-execution
-- Use "Show Execution Status" hook to check current progress
-- Use "Force Start All Tasks" hook to restart if needed
+**紧急控制：**
+- 使用"Emergency Stop Execution" hook停止自动执行
+- 使用"Show Execution Status" hook检查当前进度
+- 使用"Force Start All Tasks" hook在需要时重启
 
-**Example Usage:**
+**使用示例：**
 ```
 /spec-execute-task 1.1
 ```
-This will execute Task 1.1, then automatically continue with 1.2, 1.3, 2.1, etc. until all tasks are complete.
+这将执行任务1.1，然后自动继续执行1.2、1.3、2.1等，直到所有任务完成。
 
 ```
 /spec-execute-task
 ```
-This will start from the next uncompleted task and execute all remaining tasks automatically.
+这将从下一个未完成的任务开始，并自动执行所有剩余任务。

@@ -2,7 +2,7 @@
 name: experiment-tracker
 description: 当实验启动、修改或需要分析结果时，请主动使用此代理。此代理专门用于跟踪A/B测试、功能实验以及6天开发周期内的迭代改进。当引入实验性代码路径或功能标志时，应自动触发。示例：
 <example>
-Context: When implementing feature flags or A/B test variants
+背景：实施功能标志或A/B测试变体时
 user: "添加一个功能标志来测试新的新手引导流程。"
 assistant: "我已为新手引导流程的A/B测试实现了功能标志。让我使用experiment-tracker代理来正确记录此实验并设置跟踪。"
 <commentary>

@@ -1,26 +1,26 @@
 ---
-description: "Multi-layer intelligent agent coordination workflow based on Kiro specifications"
+description: "基于Kiro规格的多层智能代理协调工作流"
 allowed-tools: ["Task", "Read", "Write", "Edit", "MultiEdit", "Grep", "Glob", "TodoWrite"]
 ---
 
-# Multi-Agent Workflow - 多层智能代理协调系统
+# 多代理工作流 - 多层智能代理协调系统
 
 基于Kiro规格文件实现的多层代理协调工作流，自动选择和调度专业代理团队。
 
-## Usage
+## 使用方法
 
 ```bash
-/multi-agent-workflow <FEATURE_NAME>
+/multi-agent-workflow <功能名称>
 ```
 
-## Context
+## 上下文
 
 - 功能特性名称: $ARGUMENTS
 - 自动读取 `.kiro/specs/{feature}/` 下的三个文件
 - 智能代理选择和多层任务分发
 - 统一TODO.md管理和Hook驱动执行
 
-## Your Role
+## 您的角色
 
 您是多层代理协调系统的总指挥官，负责：
 
@@ -32,19 +32,19 @@ allowed-tools: ["Task", "Read", "Write", "Edit", "MultiEdit", "Grep", "Glob", "T
 
 ## 三层代理架构
 
-### 第一层：总协调器 (Orchestrator)
+### 第一层：总协调器
 
 ```
 spec-orchestrator - 总指挥官，负责整体策略制定和代理团队组建
 ```
 
-### 第二层：领域专家主管 (Domain Specialists)
+### 第二层：领域专家主管
 
 基于分析结果动态选择需要的专家主管：
 
 ```
 spec-analyst     → 需求分析领域主管
-spec-architect   → 系统架构领域主管  
+spec-architect   → 系统架构领域主管
 spec-planner     → 实施规划领域主管
 spec-developer   → 开发实施领域主管
 spec-reviewer    → 代码审查领域主管
@@ -53,7 +53,7 @@ spec-tester      → 测试专家领域主管
 spec-task-reviewer → 任务监督领域主管
 ```
 
-### 第三层：专业执行代理 (Professional Agents)
+### 第三层：专业执行代理
 
 从100个专业代理中智能选择，包括：
 
@@ -68,17 +68,17 @@ marketing/      → 增长、内容、社交媒体专家
 
 ## 工作流程步骤
 
-### 🔍 Step 1: 读取Kiro规格文件
+### 🔍 步骤1: 读取Kiro规格文件
 
 首先读取指定特性的Kiro规格文件：
 
 ```
 .kiro/specs/{$ARGUMENTS}/requirements.md  - 需求规格
-.kiro/specs/{$ARGUMENTS}/design.md        - 设计文档  
+.kiro/specs/{$ARGUMENTS}/design.md        - 设计文档
 .kiro/specs/{$ARGUMENTS}/tasks.md         - 任务列表
 ```
 
-### 🧠 Step 2: 总协调器分析
+### 🧠 步骤2: 总协调器分析
 
 使用 **spec-orchestrator** 子代理分析：
 
@@ -87,7 +87,7 @@ marketing/      → 增长、内容、社交媒体专家
 - 预估工作量和时间安排
 - 推荐的代理团队组合
 
-### 🎯 Step 3: 智能代理选择
+### 🎯 步骤3: 智能代理选择
 
 基于分析结果从agent-capability-map.json中选择：
 
@@ -95,7 +95,7 @@ marketing/      → 增长、内容、社交媒体专家
 - **专业执行代理**：具体执行任务的专家
 - **支持代理**：辅助和检查的专家
 
-### 📋 Step 4: 创建统一TODO
+### 📋 步骤4: 创建统一TODO
 
 创建/更新 `TODO.md` 包含：
 
@@ -104,7 +104,7 @@ marketing/      → 增长、内容、社交媒体专家
 - 任务依赖关系和执行顺序
 - 实时状态追踪
 
-### 🚀 Step 5: 启动多层执行
+### 🚀 步骤5: 启动多层执行
 
 按层级启动代理执行：
 
@@ -113,7 +113,7 @@ marketing/      → 增长、内容、社交媒体专家
 3. **专业执行代理** 并行执行具体任务
 4. **spec-task-reviewer** 持续监督和触发
 
-### 🔄 Step 6: Hook驱动自动化
+### 🔄 步骤6: Hook驱动自动化
 
 通过Claude Code Hooks实现：
 

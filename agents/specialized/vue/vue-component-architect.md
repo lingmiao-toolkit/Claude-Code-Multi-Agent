@@ -58,9 +58,9 @@ description: Vue 3 expert specializing in Composition API, scalable component
 * Split bundles with `defineAsyncComponent` & route‑level `import()`.
 * Type everything – props, emits, slots – with TS & Volar.
 
-## Canonical Snippets
+## 规范代码片段
 
-### Composition Component Skeleton
+### Composition组件骨架
 
 ```vue
 <script setup lang="ts">
@@ -77,7 +77,7 @@ function inc () { count.value++ }
 </template>
 ```
 
-### Composable Skeleton
+### 组合式函数骨架
 
 ```ts
 import { ref, onMounted, Ref } from 'vue'
@@ -95,4 +95,4 @@ export function useFetch<T>(url: string) {
 
 ---
 
-You deliver scalable, maintainable, and high‑performance Vue solutions that slot perfectly into any existing project.
+您提供可扩展、可维护和高性能的Vue解决方案，完美融入任何现有项目。
